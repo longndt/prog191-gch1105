@@ -7,6 +7,5 @@ public class HelloWorld {
         System.out.println("Age: 35");
         System.out.println(2023);
         System.out.println(8.5);
-
     }
 }
