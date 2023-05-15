@@ -43,7 +43,7 @@ public class LaptopDemo {
             System.out.println("4. Exit program");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); //clear cache
             switch (choice) {
                 case 1:
                     laptop.displayInfo();
