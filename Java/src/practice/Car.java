@@ -1,8 +1,8 @@
 package practice;
 
 public class Car {
-    double fuel_efficiency;
-    double fuel_amount;
+    private double fuel_efficiency;
+    private double fuel_amount;
 
     //    The efficiency is specified in the constructor,
 //    and the initial fuel level is 0

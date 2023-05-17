@@ -1,8 +1,8 @@
 package practice;
 
 public class Employee {
-    String name;
-    double salary;
+    private String name;
+    private double salary;
 
     public Employee(String employeeName, double currentSalary) {
         name = employeeName;
