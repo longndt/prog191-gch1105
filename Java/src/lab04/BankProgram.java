@@ -42,5 +42,6 @@ public class BankProgram {
         System.out.print("\nAccount 4 (RECIPIENT) updated balance: ");
         System.out.printf("%.2f",acc4.getBalance());
         System.out.print("$");
+
     }
 }
