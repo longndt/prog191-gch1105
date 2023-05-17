@@ -34,7 +34,7 @@ public class BankProgram {
         System.out.println("Account 3 (SENDER) current balance: " + acc3.getBalance() + "$");
         System.out.println("Account 4 (RECIPIENT) current balance: " + acc4.getBalance() + "$");
         double amount = 268.86;
-        System.out.println("Account 3 transfer to Account 4 : " + amount + "$");
+        System.out.println("Account 3 (SENDER) transfer to Account 4 (RECIPIENT) with an amount of " + amount + "$");
         acc3.transfer(acc4, amount);
         System.out.print("Account 3 (SENDER) updated balance: ");
         System.out.printf("%.2f",acc3.getBalance());
