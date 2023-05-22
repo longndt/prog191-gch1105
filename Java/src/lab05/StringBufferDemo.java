@@ -6,6 +6,8 @@ public class StringBufferDemo {
         System.out.println("Original string: " + s);
         s = s.replaceAll("e","u");
         System.out.println("New string: " + s);
+        System.out.println("Upper string: " + s.toUpperCase());
+        System.out.println("Index of letter 'v': " + s.indexOf("V"));
 
         StringBuffer sb = new StringBuffer("Greenwich Vietnam");
         System.out.println("Original string buffer: " + sb);
