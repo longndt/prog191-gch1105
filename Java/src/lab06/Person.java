@@ -7,6 +7,10 @@ public class Person {
     private String address;
 
     //ALT + INSERT : Code generation
+
+    public Person() {
+    }
+
     public Person(String name, int age, String address) {
         this.name = name;
         this.age = age;
