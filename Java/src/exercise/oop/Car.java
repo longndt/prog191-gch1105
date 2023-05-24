@@ -1,4 +1,4 @@
-package practice;
+package exercise.oop;
 
 public class Car {
     private double fuel_efficiency;
