@@ -1,8 +1,10 @@
 package lab07;
 
-//super class
+//super class (parent)
 
 //1. class name
+
+//public final class Employee : dùng từ khóa final để không cho phép kế thừa
 public class Employee {
     //2. class attributes (variables)
     private String name;
@@ -52,7 +54,7 @@ public class Employee {
 //                ", birthYear=" + birthYear +
 //                ", salary=" + salary +
 //                '}';
-        String employee = "Employee {name: " + name + ", birthYear: " + birthYear + ", salary: " + salary + "}";
+        String employee = "Employee {name: " + name + ", birthYear: " + birthYear + ", salary: $" + salary + "}";
         return employee;
     }
 
