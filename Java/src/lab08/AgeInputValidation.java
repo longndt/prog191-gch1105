@@ -6,12 +6,10 @@ public class AgeInputValidation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int age;
-
         do {
             System.out.print("Enter your age (1-120): ");
             try {
                 age = Integer.parseInt(scanner.nextLine());
-
                 if (age >= 1 && age <= 120) {
                     break;
                 } else {
@@ -21,7 +19,6 @@ public class AgeInputValidation {
                 System.out.println("Invalid input! Please enter a valid integer.");
             }
         } while (true);
-
         System.out.println("Your age is: " + age);
     }
 }
