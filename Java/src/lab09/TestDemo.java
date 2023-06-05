@@ -4,7 +4,6 @@ import org.junit.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static org.junit.Assert.*;
 
@@ -16,7 +15,6 @@ public class TestDemo {
         int b = 3;
         int total = a + b;
         assertEquals(8, total);
-
         int[] numbers = {6,8,10,-3,-7,-15};
         assertEquals(10, numbers[2]);
     }
