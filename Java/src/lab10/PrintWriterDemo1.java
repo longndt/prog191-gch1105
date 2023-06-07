@@ -28,7 +28,10 @@ public class PrintWriterDemo1 {
         writer.println("Birth year: " + birthYear);
         writer.println("Age: " + age);
         writer.println("Mobile phone: " + mobile);
-        writer.close();
         System.out.println("Save student data to file " + fileName + " successfully !");
+
+        //2A. close Scanner and PrintWriter
+        scanner.close();
+        writer.close();
     }
 }
