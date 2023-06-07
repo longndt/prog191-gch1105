@@ -1,6 +1,8 @@
 package lab10;
 
-public class Mobile {
+import java.io.Serializable;
+
+public class Mobile implements Serializable {
     private String name;
     private String brand;
     private String color;
