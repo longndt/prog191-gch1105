@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="lab11.HelloWorld">
+  <grid id="27dc6" binding="pnlHello" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="248" height="198"/>
+    </constraints>
+    <properties>
+      <background color="-861152"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="93571" class="javax.swing.JButton" binding="btnClick">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16711691"/>
+          <font name="JetBrains Mono NL Medium" size="26" style="1"/>
+          <foreground color="-2657791"/>
+          <hideActionText value="true"/>
+          <text value="Click me"/>
+        </properties>
+      </component>
+      <component id="ec3f6" class="javax.swing.JButton" binding="btnGreenwich">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Impact" size="18"/>
+          <foreground color="-7812844"/>
+          <text value="Greenwich"/>
+        </properties>
+      </component>
+      <component id="19f8b" class="javax.swing.JButton" binding="btnDelete">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="36" style="1"/>
+          <foreground color="-903140"/>
+          <text value="Delete"/>
+        </properties>
+      </component>
+      <component id="239de" class="javax.swing.JButton" binding="btnMessage">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-7409122"/>
+          <font style="1"/>
+          <foreground color="-13209643"/>
+          <text value="Send message"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
