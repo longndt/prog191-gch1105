@@ -9,7 +9,6 @@ public class MobileDemo {
     static File file = new File("mobile.bin");
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-
         input();
         output();
     }
