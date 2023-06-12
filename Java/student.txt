@@ -1,0 +1,4 @@
+STUDENT INFORMATION 
+Name: Hung
+Age: 19
+Birth year: 2004
