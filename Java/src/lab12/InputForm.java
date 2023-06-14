@@ -11,12 +11,12 @@ public class InputForm extends JFrame{
     private JTextField txtBrand;
     private JTextField txtPrice;
     private JTextField txtYear;
-    private JButton btnCreate;
     private JLabel lblCreate;
     private JLabel lblName;
     private JLabel lblBrand;
     private JLabel lblPrice;
     private JLabel lblYear;
+    private JButton btnCreate;
     private JButton btnDelete;
     private JButton btnSave;
     private JButton btnLoad;
