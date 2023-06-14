@@ -25,11 +25,11 @@ public class MobileDemo {
             String name = scanner.nextLine();
             System.out.print("Enter brand: ");
             String brand = scanner.nextLine();
-            System.out.print("Enter color: ");
-            String color = scanner.nextLine();
+            System.out.print("Enter year: ");
+            int year = scanner.nextInt();
             System.out.print("Enter price: ");
             double price = scanner.nextDouble();
-            Mobile mobile = new Mobile(name, brand, color, price);
+            Mobile mobile = new Mobile(name, brand, year, price);
             mobiles.add(mobile);
         }
 

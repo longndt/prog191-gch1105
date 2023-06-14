@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Mobile implements Serializable {
     private String name;
     private String brand;
-    private String color;
+    private int year;
     private double price;
 
-    public Mobile(String name, String brand, String color, double price) {
+    public Mobile(String name, String brand, int year, double price) {
         this.name = name;
         this.brand = brand;
-        this.color = color;
+        this.year = year;
         this.price = price;
     }
 
@@ -31,12 +31,12 @@ public class Mobile implements Serializable {
         this.brand = brand;
     }
 
-    public String getColor() {
-        return color;
+    public int getYear() {
+        return year;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setYear(int Year) {
+        this.year = year;
     }
 
     public double getPrice() {
@@ -52,7 +52,7 @@ public class Mobile implements Serializable {
         return "Mobile{" +
                 "name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
-                ", color='" + color + '\'' +
+                ", year='" + year+ '\'' +
                 ", price=" + price +
                 '}';
     }
