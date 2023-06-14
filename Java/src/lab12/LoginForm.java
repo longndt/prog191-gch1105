@@ -28,12 +28,8 @@ public class LoginForm extends JFrame {
                 if (accountList.containsKey(username) && (accountList.get(username).equals(password))) {
                     JOptionPane.showMessageDialog(null, "Login succeed !");
                     WelcomeForm welcomeForm = new WelcomeForm();
-                    welcomeForm.setContentPane(welcomeForm.pnlWelcome);
-                    welcomeForm.setVisible(true);
-                    welcomeForm.pack();
-                    welcomeForm.setLocationRelativeTo(null);
-                    welcomeForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    dispose();
+                    welcomeForm.show();  //show welcome form
+                    dispose();  //close login form
                 } else {
                     JOptionPane.showMessageDialog(null, "Login failed !");
                 }
