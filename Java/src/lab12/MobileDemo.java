@@ -6,9 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.io.*;
 
-public class OutputForm extends JFrame{
+public class MobileDemo extends JFrame{
     private JPanel pnlOutput;
-    private JTextField txtName;
     private JLabel lblOutput;
     private JLabel lblName;
     private JTextField txtBrand;
@@ -20,9 +19,12 @@ public class OutputForm extends JFrame{
     private JLabel lblYear;
     private JButton btnClear;
     private JButton btnEdit;
+    private JTextField txtName;
+    private JButton btnCreate;
+    private JButton btnDelete;
     String filename = "mobile.bin";
 
-    public OutputForm() {
+    public MobileDemo() {
         btnLoad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,8 +55,44 @@ public class OutputForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    editData();
+                    editData(loadData());
                     JOptionPane.showMessageDialog(null, "Edit mobile succeed !");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        btnCreate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    createData();
+                    JOptionPane.showMessageDialog(null, "Create mobile succeed !");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        btnDelete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                File file = new File(filename);
+                FileOutputStream fos = null;
+                try {
+                    fos = new FileOutputStream(file);
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+                ObjectOutputStream oos = null;
+                try {
+                    oos = new ObjectOutputStream(fos);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    oos.reset();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -62,8 +100,8 @@ public class OutputForm extends JFrame{
         });
     }
 
-    private void editData() throws IOException {
-        String name = txtName.getName();
+    private void createData() throws IOException {
+        String name = txtName.getText();
         String brand = txtBrand.getText();
         double price = Double.parseDouble(txtPrice.getText());
         int year = Integer.parseInt(txtYear.getText());
@@ -76,8 +114,21 @@ public class OutputForm extends JFrame{
         oos.close();
     }
 
+    private void editData(Mobile mobile) throws IOException {
+        mobile.setName(txtName.getText());
+        mobile.setBrand(txtBrand.getText());
+        mobile.setPrice(Double.parseDouble(txtPrice.getText()));
+        mobile.setYear(Integer.parseInt(txtYear.getText()));
+        File file = new File(filename);
+        FileOutputStream fos = new FileOutputStream(file);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(mobile);
+        fos.close();
+        oos.close();
+    }
+
     public static void main(String[] args) {
-        OutputForm outputForm = new OutputForm();
+        MobileDemo outputForm = new MobileDemo();
         outputForm.setContentPane(outputForm.pnlOutput);
         outputForm.setVisible(true);
         outputForm.pack();
@@ -98,7 +149,12 @@ public class OutputForm extends JFrame{
         File file = new File(filename);
         FileInputStream fis = new FileInputStream(file);
         ObjectInputStream ois = new ObjectInputStream(fis);
-        Mobile mobile = (Mobile) ois.readObject();
+        Mobile mobile;
+        if (ois != null) {
+            mobile = (Mobile) ois.readObject();
+        } else {
+            mobile = new Mobile();
+        }
         return mobile;
     }
 }

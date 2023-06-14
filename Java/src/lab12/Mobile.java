@@ -8,6 +8,9 @@ public class Mobile implements Serializable {
     private double price;
     private int year;
 
+    public Mobile() {
+    }
+
     public Mobile(String name, String brand, double price, int year) {
         this.name = name;
         this.brand = brand;

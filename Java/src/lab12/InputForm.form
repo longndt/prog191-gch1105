@@ -84,7 +84,7 @@
         <properties>
           <font name="JetBrains Mono NL ExtraBold" size="22" style="1"/>
           <foreground color="-903381"/>
-          <text value="CREATE NEW MOBILE"/>
+          <text value="CREATE MOBILE"/>
         </properties>
       </component>
       <component id="12006" class="javax.swing.JButton" binding="btnCreate">
