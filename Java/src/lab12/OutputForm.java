@@ -4,10 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 
 public class OutputForm extends JFrame{
     private JPanel pnlOutput;
@@ -22,6 +19,8 @@ public class OutputForm extends JFrame{
     private JLabel lblPrice;
     private JLabel lblYear;
     private JButton btnClear;
+    private JButton btnEdit;
+    String filename = "mobile.bin";
 
     public OutputForm() {
         btnLoad.addActionListener(new ActionListener() {
@@ -50,6 +49,31 @@ public class OutputForm extends JFrame{
                 txtYear.setText("");
             }
         });
+        btnEdit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    editData();
+                    JOptionPane.showMessageDialog(null, "Edit mobile succeed !");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+    }
+
+    private void editData() throws IOException {
+        String name = txtName.getName();
+        String brand = txtBrand.getText();
+        double price = Double.parseDouble(txtPrice.getText());
+        int year = Integer.parseInt(txtYear.getText());
+        Mobile mobile = new Mobile(name, brand, price, year);
+        File file = new File(filename);
+        FileOutputStream fos = new FileOutputStream(file);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(mobile);
+        fos.close();
+        oos.close();
     }
 
     public static void main(String[] args) {
@@ -71,7 +95,6 @@ public class OutputForm extends JFrame{
     }
 
     private Mobile loadData () throws IOException, ClassNotFoundException {
-        String filename = "mobile.bin";
         File file = new File(filename);
         FileInputStream fis = new FileInputStream(file);
         ObjectInputStream ois = new ObjectInputStream(fis);

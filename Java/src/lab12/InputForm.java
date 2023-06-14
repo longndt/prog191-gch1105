@@ -17,6 +17,9 @@ public class InputForm extends JFrame{
     private JLabel lblBrand;
     private JLabel lblPrice;
     private JLabel lblYear;
+    private JButton btnDelete;
+    private JButton btnSave;
+    private JButton btnLoad;
 
     public InputForm() {
         btnCreate.addActionListener(new ActionListener() {
